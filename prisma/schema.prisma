@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,142 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model plants {
+  id                                Int     @id @default(autoincrement())
+  symbol                            String? @db.VarChar
+  accepted_symbol_x                 String? @db.VarChar
+  synonym_symbol_x                  String? @db.VarChar
+  scientific_name_x                 String? @db.VarChar
+  hybrid_genus_indicator            String? @db.VarChar
+  hybrid_species_indicator          String? @db.VarChar
+  species                           String? @db.VarChar
+  subspecies_prefix                 String? @db.VarChar
+  hybrid_subspecies_indicator       String? @db.VarChar
+  subspecies                        String? @db.VarChar
+  variety_prefix                    String? @db.VarChar
+  hybrid_variety_indicator          String? @db.VarChar
+  variety                           String? @db.VarChar
+  subvariety_prefix                 String? @db.VarChar
+  subvariety                        String? @db.VarChar
+  forma_prefix                      String? @db.VarChar
+  forma                             String? @db.VarChar
+  genera_binomial_author            String? @db.VarChar
+  trinomial_author                  String? @db.VarChar
+  quadranomial_author               String? @db.VarChar
+  questionable_taxon_indicator      String? @db.VarChar
+  parents                           String? @db.VarChar
+  common_name                       String? @db.VarChar
+  state                             String? @db.VarChar
+  category                          String? @db.VarChar
+  family                            String? @db.VarChar
+  family_symbol                     String? @db.VarChar
+  family_common_name                String? @db.VarChar
+  xorder                            String? @db.VarChar
+  subclass                          String? @db.VarChar
+  class                             String? @db.VarChar
+  subdivision                       String? @db.VarChar
+  division                          String? @db.VarChar
+  superdivision                     String? @db.VarChar
+  subkingdom                        String? @db.VarChar
+  kingdom                           String? @db.VarChar
+  duration                          String? @db.VarChar
+  growth_habit                      String? @db.VarChar
+  native_status                     String? @db.VarChar
+  federal_noxious_status            String? @db.VarChar
+  state_noxious_status              String? @db.VarChar
+  state_noxious_common_name         String? @db.VarChar
+  invasive                          String? @db.VarChar
+  federal_t_e_status                String? @db.VarChar
+  state_t_e_status                  String? @db.VarChar
+  state_t_e_common_name             String? @db.VarChar
+  accepted_symbol_y                 String? @db.VarChar
+  synonym_symbol_y                  String? @db.VarChar
+  scientific_name_y                 String? @db.VarChar
+  active_growth_period              String? @db.VarChar
+  after_harvest_regrowth_rate       String? @db.VarChar
+  bloat                             String? @db.VarChar
+  c_n_ratio                         String? @db.VarChar
+  coppice_potential                 String? @db.VarChar
+  fall_conspicuous                  String? @db.VarChar
+  fire_resistance                   String? @db.VarChar
+  flower_color                      String? @db.VarChar
+  flower_conspicuous                String? @db.VarChar
+  foliage_color                     String? @db.VarChar
+  foliage_porosity_summer           String? @db.VarChar
+  foliage_porosity_winter           String? @db.VarChar
+  foliage_texture                   String? @db.VarChar
+  fruit_color                       String? @db.VarChar
+  fruit_conspicuous                 String? @db.VarChar
+  growth_form                       String? @db.VarChar
+  growth_rate                       String? @db.VarChar
+  height_at_base_age_maximum_feet   String? @db.VarChar
+  height_mature_feet                String? @db.VarChar
+  known_allelopath                  String? @db.VarChar
+  leaf_retention                    String? @db.VarChar
+  lifespan                          String? @db.VarChar
+  low_growing_grass                 String? @db.VarChar
+  nitrogen_fixation                 String? @db.VarChar
+  resprout_ability                  String? @db.VarChar
+  shape_and_orientation             String? @db.VarChar
+  toxicity                          String? @db.VarChar
+  adapted_to_coarse_textured_soils  String? @db.VarChar
+  adapted_to_medium_textured_soils  String? @db.VarChar
+  adapted_to_fine_textured_soils    String? @db.VarChar
+  anaerobic_tolerance               String? @db.VarChar
+  caco_3_tolerance                  String? @db.VarChar
+  cold_stratification_required      String? @db.VarChar
+  drought_tolerance                 String? @db.VarChar
+  fertility_requirement             String? @db.VarChar
+  fire_tolerance                    String? @db.VarChar
+  frost_free_days_minimum           String? @db.VarChar
+  hedge_tolerance                   String? @db.VarChar
+  moisture_use                      String? @db.VarChar
+  ph_minimum                        String? @db.VarChar
+  ph_maximum                        String? @db.VarChar
+  planting_density_per_acre_minimum String? @db.VarChar
+  planting_density_per_acre_maximum String? @db.VarChar
+  precipitation_minimum             String? @db.VarChar
+  precipitation_maximum             String? @db.VarChar
+  root_depth_minimum_inches         String? @db.VarChar
+  salinity_tolerance                String? @db.VarChar
+  shade_tolerance                   String? @db.VarChar
+  temperature_minimum_f             String? @db.VarChar
+  bloom_period                      String? @db.VarChar
+  commercial_availability           String? @db.VarChar
+  fruit_seed_abundance              String? @db.VarChar
+  fruit_seed_period_begin           String? @db.VarChar
+  fruit_seed_period_end             String? @db.VarChar
+  fruit_seed_persistence            String? @db.VarChar
+  propogated_by_bare_root           String? @db.VarChar
+  propogated_by_bulbs               String? @db.VarChar
+  propogated_by_container           String? @db.VarChar
+  propogated_by_corms               String? @db.VarChar
+  propogated_by_cuttings            String? @db.VarChar
+  propogated_by_seed                String? @db.VarChar
+  propogated_by_sod                 String? @db.VarChar
+  propogated_by_sprigs              String? @db.VarChar
+  propogated_by_tubers              String? @db.VarChar
+  seeds_per_pound                   String? @db.VarChar
+  seed_spread_rate                  String? @db.VarChar
+  seedling_vigor                    String? @db.VarChar
+  small_grain                       String? @db.VarChar
+  vegetative_spread_rate            String? @db.VarChar
+  berry_nut_seed_product            String? @db.VarChar
+  christmas_tree_product            String? @db.VarChar
+  fodder_product                    String? @db.VarChar
+  fuelwood_product                  String? @db.VarChar
+  lumber_product                    String? @db.VarChar
+  naval_store_product               String? @db.VarChar
+  nursery_stock_product             String? @db.VarChar
+  palatable_browse_animal           String? @db.VarChar
+  palatable_graze_animal            String? @db.VarChar
+  palatable_human                   String? @db.VarChar
+  post_product                      String? @db.VarChar
+  protein_potential                 String? @db.VarChar
+  pulpwood_product                  String? @db.VarChar
+  veneer_product                    String? @db.VarChar
+  genus                             String? @db.VarChar
 }

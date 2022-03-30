@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    ports: ['5432:5432']
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: $$DATABASE_PASSWORD
+      POSTGRES_USER: $$DATABASE_USER
+      POSTGRES_DB: $$DATABASE_NAME
+    volumes:
+      - plants-db:/var/lib/postgresql/data
+volumes:
+  plants-db:
